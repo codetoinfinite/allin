@@ -1,0 +1,31 @@
+# ALLIN
+
+> India's premier institute for accounting and finance. ALLIN connects Indian students to worldwide finance careers through global credentials (ACCA, CA, EA, IFRS), a School Strengthening Program (SSP) for grades 6–12, and job-ready skill courses, all backed by Big-4 mentors, real internships and committed placement support.
+
+ALLIN (also "ALLIN EdTech") teaches through a five-stage roadmap: counselling & pathway, concept mastery, implementation & internship, A3 mentorship, and network & placement. Content is delivered via live and recorded classes by CA rank-holders and Big-4 trained faculty.
+
+## Core pages
+- [Home](https://allinedtech.com/): Overview, the ALLIN roadmap, programs and mentors.
+- [About](https://allinedtech.com/about.html): Mission, faculty and the KICN teaching method.
+- [School (SSP)](https://allinedtech.com/school.html): School Strengthening Program for grades 6–12.
+- [Skill Courses](https://allinedtech.com/skills.html): Job-ready finance and professional tracks.
+- [College Collaborations](https://allinedtech.com/college.html): Institutional tie-ups.
+- [Contact](https://allinedtech.com/contact.html): Enquiry form and direct contact.
+
+## Global credentials (Skill Courses)
+- [ACCA](https://allinedtech.com/courses/acca.html): Chartered Certified Accountant qualification.
+- [CA](https://allinedtech.com/courses/ca.html): Chartered Accountancy.
+- [EA / TAP](https://allinedtech.com/courses/ea-tap.html): US Enrolled Agent & Tax Accounting Program.
+- [IFRS](https://allinedtech.com/courses/ifrs.html): International Financial Reporting Standards.
+- [Financial Literacy](https://allinedtech.com/courses/financial-literacy.html): Foundations of personal & business finance.
+
+## School programs (SSP)
+- [CA Foundation](https://allinedtech.com/programs/ca-foundation.html)
+- [JEE Foundation](https://allinedtech.com/programs/jee.html) · [JEE Advanced](https://allinedtech.com/programs/jee-advanced.html)
+- [NEET](https://allinedtech.com/programs/neet.html) · [CUET](https://allinedtech.com/programs/cuet.html) · [CLAT](https://allinedtech.com/programs/clat.html) · [IPMAT](https://allinedtech.com/programs/ipmat.html)
+- [Career Guidance](https://allinedtech.com/programs/career-guidance.html) · [Mindset](https://allinedtech.com/programs/mindset.html) · [Psychology](https://allinedtech.com/programs/psychology.html)
+- [Entrepreneurship](https://allinedtech.com/programs/entrepreneurship.html) · [Financial Literacy](https://allinedtech.com/programs/financial-literacy.html) · [AI](https://allinedtech.com/programs/ai.html)
+
+## Contact
+- Email: anantgupta@gmail.com
+- Country: India

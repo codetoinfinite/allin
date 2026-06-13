@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 408" width="306" height="408" role="img" aria-label="Faculty portrait">
+<defs>
+<linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#16243d"/><stop offset="1" stop-color="#0b1424"/>
+</linearGradient>
+<radialGradient id="gl3" cx="50%" cy="32%" r="60%">
+<stop offset="0" stop-color="#b9893a" stop-opacity=".22"/><stop offset="1" stop-color="#b9893a" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="306" height="408" fill="url(#bg3)"/>
+<rect width="306" height="408" fill="url(#gl3)"/>
+<text x="153" y="150" font-family="Epilogue, Arial, sans-serif" font-size="120" font-weight="800" fill="#b9893a" fill-opacity=".14" text-anchor="middle">SR</text>
+<g fill="#b9893a" fill-opacity=".85">
+<circle cx="153" cy="228" r="54"/>
+<path d="M63 408c0-52 40-92 90-92s90 40 90 92z"/>
+</g>
+<rect x="1" y="1" width="304" height="406" rx="15" fill="none" stroke="#b9893a" stroke-opacity=".25"/>
+</svg>

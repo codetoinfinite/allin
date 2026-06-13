@@ -1,0 +1,154 @@
+/* ==========================================================================
+   ALLIN — components.css
+   Navbar, theme toggle, marquee, footer, forms, modal
+   ========================================================================== */
+
+/* ----- Navbar ------------------------------------------------------------ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);
+  display:flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;
+  transition:background .3s var(--ease),border-color .3s,box-shadow .3s;
+}
+.nav.scrolled{background:color-mix(in srgb,var(--bg) 92%,transparent);
+  border-bottom-color:var(--border-soft);box-shadow:var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;gap:1rem;padding-inline:clamp(.5rem,2vw,1.4rem)}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--font-head);
+  font-weight:800;font-size:1.25rem;color:var(--heading);letter-spacing:-.02em}
+.brand .mark{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;
+  background:var(--gold);color:var(--on-gold);font-weight:800;font-size:1.05rem;
+  box-shadow:0 6px 18px color-mix(in srgb,var(--gold) 40%,transparent)}
+.brand .mark svg{width:22px;height:22px}
+.brand b{color:var(--gold)}
+.brand-logo{height:clamp(30px,3.4vw,38px);width:auto;display:block}
+.footer .brand-logo{height:34px}
+
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{position:relative;font-weight:500;font-size:var(--fs-sm);color:var(--text-soft);
+  padding:.55rem .85rem;border-radius:10px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:var(--surface-2)}
+.nav-links a.active{color:var(--gold)}
+.nav-links a.active::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:.3rem;
+  height:2px;border-radius:2px;background:var(--gold)}
+
+.nav-actions{display:flex;align-items:center;gap:.6rem}
+
+/* theme toggle */
+.theme-toggle{position:relative;width:58px;height:30px;border-radius:999px;
+  border:1px solid var(--border);background:var(--surface-2);
+  display:inline-flex;align-items:center;padding:0 4px;transition:background .3s,border-color .3s}
+.theme-toggle:hover{border-color:var(--gold)}
+.theme-toggle .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+  background:var(--gold);color:var(--on-gold);display:grid;place-items:center;
+  transition:transform .35s var(--ease),background .3s}
+[data-theme="light"] .theme-toggle .knob{transform:translateX(28px)}
+.theme-toggle .knob svg{width:13px;height:13px}
+.theme-toggle .knob .i-sun{display:none}
+.theme-toggle .knob .i-moon{display:block}
+[data-theme="light"] .theme-toggle .knob .i-sun{display:block}
+[data-theme="light"] .theme-toggle .knob .i-moon{display:none}
+
+/* hamburger */
+.nav-toggle{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--border);
+  background:var(--surface-2);align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.nav-toggle span{width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ----- Marquee ----------------------------------------------------------- */
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:1rem;width:max-content;animation:marquee 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track.rev{animation-direction:reverse;animation-duration:44s}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.logo-pill{display:inline-flex;align-items:center;justify-content:center;
+  min-width:170px;height:74px;padding:0 1.6rem;border-radius:14px;
+  background:var(--surface);border:1px solid var(--border-soft);
+  font-family:var(--font-head);font-weight:700;font-size:1.05rem;color:var(--text-soft);
+  letter-spacing:.01em;white-space:nowrap}
+.logo-pill b{color:var(--gold)}
+
+/* ----- Footer ------------------------------------------------------------ */
+.footer{background:var(--bg-1);border-top:1px solid var(--border-soft);
+  padding:clamp(3rem,6vw,4.5rem) 0 1.8rem}
+.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:2.4rem}
+.footer-col h4{font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.1em;
+  color:var(--text-mute);margin-bottom:1rem;font-family:var(--font-body);font-weight:700}
+.footer-col a{display:block;color:var(--text-soft);padding:.32rem 0;font-size:var(--fs-sm);transition:color .2s,padding-left .2s}
+.footer-col a:hover{color:var(--gold);padding-left:4px}
+.footer-brand p{margin:.9rem 0 1.2rem;font-size:var(--fs-sm);max-width:32ch}
+.footer-socials{display:flex;gap:.6rem}
+.footer-socials a{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;
+  background:var(--surface-2);border:1px solid var(--border-soft);color:var(--text-soft);padding:0}
+.footer-socials a:hover{background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
+.footer-socials svg{width:18px;height:18px}
+.footer-bottom{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--border-soft);
+  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:var(--fs-xs);color:var(--text-mute)}
+.footer-bottom nav{display:flex;gap:1.2rem;flex-wrap:wrap}
+.footer-bottom nav a{font-size:var(--fs-xs);color:var(--text-mute)}
+.footer-bottom nav a:hover{color:var(--gold)}
+
+/* ----- Forms ------------------------------------------------------------- */
+.form{display:grid;gap:1.1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field{display:grid;gap:.4rem}
+.field label{font-size:var(--fs-sm);font-weight:600;color:var(--text)}
+.field label .req{color:var(--gold)}
+.field input,.field select,.field textarea{
+  width:100%;padding:.85rem 1rem;border-radius:var(--radius-sm);
+  background:var(--surface-2);border:1px solid var(--border);color:var(--text);
+  font-size:var(--fs-sm);transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:120px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--text-mute)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 18%,transparent)}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#d9534f}
+.field .err{font-size:var(--fs-xs);color:#e0736f;min-height:1em}
+.form-note{font-size:var(--fs-xs);color:var(--text-mute)}
+.form-status{font-size:var(--fs-sm);font-weight:600;padding:.6rem 0;min-height:1.4em}
+.form-status.ok{color:var(--gold)}
+.form-status.bad{color:#e0736f}
+
+/* ----- WhatsApp float ---------------------------------------------------- */
+.wa-float{position:fixed;right:1.2rem;bottom:1.2rem;z-index:900;width:56px;height:56px;border-radius:50%;
+  background:#1f9d55;color:#fff;display:grid;place-items:center;box-shadow:var(--shadow);
+  transition:transform .25s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px}
+
+/* ----- Back to top ------------------------------------------------------- */
+.to-top{position:fixed;right:1.2rem;bottom:5.4rem;z-index:899;width:44px;height:44px;border-radius:12px;
+  background:var(--surface);border:1px solid var(--border);color:var(--text);display:grid;place-items:center;
+  opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+.to-top:hover{color:var(--gold);border-color:var(--gold)}
+
+/* ----- Responsive nav ---------------------------------------------------- */
+@media (max-width:1180px){
+  .nav-toggle{display:flex}
+  .nav-links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:.2rem;padding:1rem var(--gut) 1.6rem;background:var(--bg-1);border-bottom:1px solid var(--border-soft);
+    box-shadow:var(--shadow);transform:translateY(-130%);transition:transform .4s var(--ease);max-height:calc(100vh - var(--nav-h));overflow:auto}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:.85rem 1rem;border-radius:12px}
+  .nav-links a.active::after{display:none}
+  .nav-links a.active{background:var(--surface-2)}
+}
+@media (max-width:768px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:1.8rem}
+  .footer-brand{grid-column:1/-1}
+  .form-row{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  /* declutter mobile nav: drop the CTA button, keep theme + hamburger */
+  .nav-actions .btn-gold{display:none}
+  .nav-actions{gap:.45rem}
+}
+@media (max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+}

@@ -1,0 +1,232 @@
+/* ==========================================================================
+   ALLIN — pages.css  (inner pages: course, school, skills, college, about, contact)
+   ========================================================================== */
+
+/* ----- Generic page hero ------------------------------------------------- */
+.page-hero{position:relative;padding:calc(var(--nav-h) + clamp(2.5rem,6vw,4rem)) 0 clamp(2rem,4vw,3rem);overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(55% 60% at 80% 0%,color-mix(in srgb,var(--gold) 9%,transparent),transparent 70%)}
+.page-hero.center{text-align:center}
+.page-hero h1{font-size:var(--fs-2xl);margin:.8rem 0 .8rem}
+.page-hero .lead{font-size:var(--fs-md);max-width:60ch}
+.page-hero.center .lead{margin-inline:auto}
+.breadcrumb{display:flex;gap:.5rem;font-size:var(--fs-xs);color:var(--text-mute);margin-bottom:.4rem}
+.breadcrumb a:hover{color:var(--gold)}
+
+/* ----- Detail hero (course) --------------------------------------------- */
+.detail-hero{position:relative;padding:calc(var(--nav-h) + clamp(2rem,5vw,3.4rem)) 0 clamp(2rem,4vw,3rem)}
+.detail-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:clamp(1.8rem,4vw,3rem);align-items:start}
+.detail-hero h1{font-size:var(--fs-2xl);margin:.7rem 0 .8rem}
+.detail-hero .lead{font-size:var(--fs-md);margin-bottom:1.4rem}
+.detail-meta{display:flex;flex-wrap:wrap;gap:1.6rem;margin-bottom:1.6rem}
+.detail-meta .v{font-family:var(--font-head);font-weight:800;font-size:var(--fs-lg);color:var(--gold)}
+.detail-meta .k{font-size:var(--fs-xs);color:var(--text-mute)}
+.detail-banner{aspect-ratio:16/11;border-radius:var(--radius-lg);background:var(--bg-2);
+  border:1px solid var(--border);display:grid;place-content:center;text-align:center;padding:1.5rem;
+  box-shadow:var(--shadow)}
+.detail-banner .code{font-family:var(--font-head);font-weight:800;font-size:var(--fs-2xl);color:var(--gold);letter-spacing:.04em}
+.detail-banner .sub{font-size:var(--fs-sm);color:var(--text-soft);margin-top:.4rem}
+
+/* ----- Two-column content + sticky sidebar ------------------------------ */
+.content-grid{display:grid;grid-template-columns:1.5fr .85fr;gap:clamp(1.8rem,4vw,3rem);align-items:start}
+.prose h2{font-size:var(--fs-lg);margin:1.8rem 0 .7rem;color:var(--heading)}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:var(--fs-md);margin:1.4rem 0 .5rem}
+.prose p{margin-bottom:1rem}
+.prose ul.ticks{display:grid;gap:.6rem;margin:.6rem 0 1.2rem}
+.prose ul.ticks li{display:flex;gap:.6rem;font-size:var(--fs-sm);color:var(--text-soft)}
+.prose ul.ticks li svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:.18rem}
+.prose table{width:100%;border-collapse:collapse;margin:.8rem 0 1.4rem;font-size:var(--fs-sm)}
+.prose th,.prose td{border:1px solid var(--border);padding:.75rem .9rem;text-align:left;vertical-align:top}
+.prose th{background:var(--surface-2);color:var(--heading);font-family:var(--font-head)}
+.prose td{color:var(--text-soft)}
+
+.sidebar-card{position:sticky;top:calc(var(--nav-h) + 1.4rem);background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(1.4rem,3vw,1.9rem);box-shadow:var(--shadow)}
+.sidebar-card .price{font-family:var(--font-head);font-weight:800;font-size:var(--fs-xl);color:var(--gold)}
+.sidebar-card .price small{font-size:var(--fs-sm);color:var(--text-mute);font-weight:400}
+.sidebar-card .feat{display:grid;gap:.6rem;margin:1.1rem 0}
+.sidebar-card .feat li{display:flex;gap:.55rem;font-size:var(--fs-sm);color:var(--text-soft)}
+.sidebar-card .feat svg{width:17px;height:17px;color:var(--gold);flex:none;margin-top:.15rem}
+.sidebar-card .btn{margin-bottom:.7rem}
+
+/* ----- Accordion (curriculum / FAQ) ------------------------------------- */
+.acc{display:grid;gap:.7rem}
+.acc-item{border:1px solid var(--border-soft);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.acc-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;
+  padding:1.1rem 1.3rem;text-align:left;font-family:var(--font-head);font-weight:600;font-size:var(--fs-base);color:var(--heading)}
+.acc-head .ic{width:26px;height:26px;flex:none;border-radius:50%;border:1px solid var(--border);
+  display:grid;place-items:center;color:var(--gold);transition:transform .3s,background .3s}
+.acc-item.open .acc-head .ic{transform:rotate(45deg);background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.acc-body .inner{padding:0 1.3rem 1.2rem;color:var(--text-soft);font-size:var(--fs-sm)}
+.acc-body .inner ul{display:grid;gap:.5rem;margin-top:.4rem}
+.acc-body .inner li{display:flex;gap:.5rem}
+.acc-body .inner li::before{content:"›";color:var(--gold);font-weight:700}
+
+/* ----- Stat band --------------------------------------------------------- */
+.stat-band{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.stat-cell{text-align:center;padding:1.4rem 1rem;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border-soft)}
+.stat-cell .num{font-family:var(--font-head);font-weight:800;font-size:var(--fs-xl);color:var(--gold)}
+.stat-cell .label{font-size:var(--fs-sm);color:var(--text-soft);margin-top:.2rem}
+
+/* ----- Steps (how it works) --------------------------------------------- */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.step-card{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:1.5rem;
+  transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.step-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--border)}
+.step-card .ic{width:52px;height:52px;border-radius:14px;background:color-mix(in srgb,var(--gold) 12%,transparent);
+  color:var(--gold);display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:1.3rem;margin-bottom:1rem}
+.step-card h3{font-size:var(--fs-base);margin-bottom:.4rem}
+.step-card p{font-size:var(--fs-sm);color:var(--text-mute)}
+
+/* ----- Promo split ------------------------------------------------------- */
+.promo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.4rem);align-items:center}
+.promo .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0 1.6rem}
+.promo-visual{aspect-ratio:4/3;border-radius:var(--radius-lg);background:var(--bg-2);border:1px solid var(--border);
+  display:grid;place-content:center;text-align:center;padding:2rem;box-shadow:var(--shadow)}
+.promo-visual .big{font-family:var(--font-head);font-weight:800;font-size:var(--fs-2xl);color:var(--gold)}
+.promo-visual p{margin-top:.5rem;font-size:var(--fs-sm)}
+.promo-visual.has-img{padding:0;overflow:hidden;position:relative}
+.promo-visual.has-img img{width:100%;height:100%;object-fit:cover;display:block}
+.promo-visual.has-img::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,transparent 48%,color-mix(in srgb,var(--gold) 22%,transparent));mix-blend-mode:soft-light}
+.img-band{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);aspect-ratio:21/8}
+.img-band img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.img-band:hover img{transform:scale(1.05)}
+.img-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,color-mix(in srgb,var(--bg) 78%,transparent))}
+.img-band .cap{position:absolute;left:clamp(1.2rem,4vw,2.6rem);bottom:clamp(1.1rem,3vw,2rem);z-index:2;max-width:34ch}
+.img-band .cap h3{font-family:var(--font-head);font-weight:800;font-size:var(--fs-lg);color:var(--heading);margin:0 0 .3rem}
+.img-band .cap p{margin:0;color:var(--text-soft);font-size:var(--fs-sm)}
+
+/* ----- Skill / program card grid ---------------------------------------- */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:1.4rem}
+.skill-card{display:grid;grid-template-columns:128px 1fr;background:var(--surface);border:1px solid var(--border-soft);
+  border-radius:var(--radius);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.skill-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--border)}
+.skill-thumb{display:grid;place-items:center;padding:1rem;text-align:center;background:var(--bg-2);
+  border-right:1px solid var(--border-soft)}
+.skill-thumb svg{width:46px;height:46px;color:var(--gold)}
+.skill-info{padding:1.3rem}
+.skill-info .badge{font-size:.66rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase}
+.skill-info h3{font-size:var(--fs-base);margin:.4rem 0 .4rem}
+.skill-info p{font-size:var(--fs-sm);color:var(--text-mute);margin-bottom:1rem}
+
+/* card grid for programs/college (vertical) */
+.vcard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1.4rem}
+.vcard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border-soft);
+  border-radius:var(--radius);padding:1.6rem;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.vcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--border)}
+.vcard .ic{width:52px;height:52px;border-radius:14px;background:color-mix(in srgb,var(--gold) 12%,transparent);
+  color:var(--gold);display:grid;place-items:center;margin-bottom:1rem}
+.vcard .ic svg{width:26px;height:26px}
+.vcard h3{font-size:var(--fs-base);margin-bottom:.45rem}
+.vcard p{font-size:var(--fs-sm);color:var(--text-mute);margin-bottom:1rem}
+.vcard .more{margin-top:auto;color:var(--gold);font-weight:600;font-size:var(--fs-sm);display:inline-flex;gap:.35rem;align-items:center}
+.vcard .more svg{width:16px;height:16px;transition:transform .25s}
+.vcard:hover .more svg{transform:translateX(4px)}
+
+/* ----- Tiers (pricing) --------------------------------------------------- */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.tier{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:1.8rem;text-align:center}
+.tier.featured{border-color:var(--gold);box-shadow:var(--shadow)}
+.tier h4{color:var(--gold);font-size:var(--fs-base)}
+.tier .price{font-family:var(--font-head);font-weight:800;font-size:var(--fs-2xl);color:var(--heading);margin:.4rem 0}
+.tier .price small{font-size:var(--fs-sm);color:var(--text-mute);font-weight:400}
+.tier>p{font-size:var(--fs-sm);color:var(--text-mute);margin-bottom:1rem}
+.tier ul{display:grid;gap:.6rem;text-align:left;margin-bottom:1.4rem}
+.tier li{display:flex;gap:.5rem;font-size:var(--fs-sm);color:var(--text-soft)}
+.tier li svg{width:17px;height:17px;color:var(--gold);flex:none;margin-top:.15rem}
+
+/* ----- FAQ list ---------------------------------------------------------- */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* ----- Feature list two-col --------------------------------------------- */
+.feat-2col{display:grid;grid-template-columns:1fr 1fr;gap:1rem 2rem}
+.feat-2col li{display:flex;gap:.6rem;font-size:var(--fs-sm);color:var(--text-soft);padding:.4rem 0}
+.feat-2col li svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:.15rem}
+
+/* ----- Logos / partner strip -------------------------------------------- */
+.partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:1rem}
+.partner-card{display:grid;place-items:center;padding:1.4rem;border-radius:var(--radius-sm);
+  background:var(--surface);border:1px solid var(--border-soft);font-family:var(--font-head);font-weight:700;color:var(--text-soft)}
+.partner-card:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ----- Responsive -------------------------------------------------------- */
+@media (max-width:980px){
+  .detail-grid,.content-grid,.promo{grid-template-columns:1fr}
+  .detail-banner{order:-1;max-width:480px}
+  .sidebar-card{position:static}
+  .stat-band,.steps-grid{grid-template-columns:repeat(2,1fr)}
+  .tiers{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+  .faq-grid,.feat-2col{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .stat-band,.steps-grid{grid-template-columns:1fr}
+  .skill-card{grid-template-columns:1fr}
+  .skill-thumb{border-right:none;border-bottom:1px solid var(--border-soft);padding:1.4rem}
+}
+
+/* ----- TAP program sections --------------------------------------------- */
+/* career-path carousel */
+.tap-carousel{position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  border:1px solid var(--border);box-shadow:var(--shadow);
+  background:
+    radial-gradient(120% 120% at 100% 0%,color-mix(in srgb,var(--gold) 22%,transparent),transparent 60%),
+    linear-gradient(135deg,var(--surface),var(--bg-2));
+  min-height:clamp(230px,30vw,320px);display:grid}
+.tap-slide{grid-area:1/1;display:grid;place-items:center;text-align:center;
+  padding:clamp(1.8rem,5vw,3.6rem);opacity:0;transform:scale(1.03);
+  transition:opacity .8s var(--ease),transform .8s var(--ease);pointer-events:none}
+.tap-slide.active{opacity:1;transform:none;pointer-events:auto}
+.tap-slide-in{max-width:46ch}
+.tap-slide-in .chip{margin-bottom:1rem}
+.tap-slide-in h3{font-size:var(--fs-xl);margin:.2rem 0 .6rem;color:var(--heading)}
+.tap-slide-in p{font-size:var(--fs-md);color:var(--text-soft)}
+.tap-dots{position:absolute;bottom:1.1rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;z-index:2}
+.tap-dot{width:9px;height:9px;padding:0;border-radius:999px;cursor:pointer;
+  background:color-mix(in srgb,var(--text) 28%,transparent);transition:width .3s var(--ease),background .3s}
+.tap-dot.active{width:26px;background:var(--gold)}
+
+/* 4-step path */
+.tap-path{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;
+  margin-top:clamp(1.6rem,4vw,2.4rem)}
+.tap-step{position:relative;text-align:center;background:var(--surface);
+  border:1px solid var(--border-soft);border-radius:var(--radius);padding:1.7rem 1.2rem;
+  transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.tap-step:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--border)}
+.tap-step .num{position:absolute;top:.9rem;right:1.1rem;font-family:var(--font-head);
+  font-weight:800;font-size:var(--fs-md);color:color-mix(in srgb,var(--gold) 32%,transparent)}
+.tap-step .ic{width:60px;height:60px;border-radius:16px;margin:0 auto 1rem;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--gold) 12%,transparent);color:var(--gold)}
+.tap-step .ic svg{width:28px;height:28px}
+.tap-step h3{font-size:var(--fs-base);margin-bottom:.4rem}
+.tap-step p{font-size:var(--fs-sm);color:var(--text-mute)}
+.tap-step:not(:last-child)::after{content:"\2192";position:absolute;top:50%;right:-.85rem;
+  transform:translateY(-50%);color:var(--gold);font-weight:700;font-size:1.1rem;z-index:2;line-height:1}
+
+/* split image/text */
+.tap-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,5vw,4rem);align-items:center}
+.tap-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);aspect-ratio:4/5;max-height:560px;margin-inline:auto;width:100%}
+.tap-media img{width:100%;height:100%;object-fit:cover;display:block}
+.tap-split-body .section-title{margin:.6rem 0 .7rem}
+.tap-split-body .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+.tap-powered{font-size:var(--fs-sm);color:var(--text-mute);margin-top:.2rem}
+.tap-powered strong{color:var(--gold)}
+.tap-points{align-self:center}
+.feat-list{display:grid;gap:.9rem}
+.feat-list li{display:flex;gap:.7rem;font-size:var(--fs-base);color:var(--text-soft);align-items:flex-start}
+.feat-list li svg{width:20px;height:20px;color:var(--gold);flex:none;margin-top:.2rem}
+
+/* step-card icon support (career opportunities) */
+.step-card .ic svg{width:26px;height:26px}
+
+@media (max-width:860px){
+  .tap-path{grid-template-columns:repeat(2,1fr)}
+  .tap-step:not(:last-child)::after{display:none}
+  .tap-split{grid-template-columns:1fr}
+  .tap-media{order:-1;max-width:420px}
+}
+@media (max-width:440px){
+  .tap-path{grid-template-columns:1fr}
+}

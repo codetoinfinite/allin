@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Faculty portrait placeholder">
+  <rect width="240" height="240" fill="#16243d"/>
+  <circle cx="120" cy="96" r="46" fill="#1f3357"/>
+  <path d="M40 220c0-44 36-72 80-72s80 28 80 72z" fill="#1f3357"/>
+  <circle cx="120" cy="96" r="46" fill="none" stroke="#c9a64e" stroke-width="3"/>
+  <path d="M40 220c0-44 36-72 80-72s80 28 80 72" fill="none" stroke="#c9a64e" stroke-width="3"/>
+</svg>
