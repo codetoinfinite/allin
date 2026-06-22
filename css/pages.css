@@ -117,6 +117,37 @@
   .photo-collage .feat-tile{grid-column:span 2;grid-row:span 1;aspect-ratio:16/10}
 }
 
+/* ----- Courses by category (tabbed filter) ------------------------------ */
+.cat-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin:1.8rem auto 2.4rem}
+.cat-tab{appearance:none;cursor:pointer;font:inherit;font-weight:600;font-size:var(--fs-sm);
+  color:var(--text-soft);background:var(--surface);border:1px solid var(--border);
+  padding:.6rem 1.2rem;border-radius:999px;transition:all .25s var(--ease)}
+.cat-tab:hover{color:var(--heading);border-color:var(--gold)}
+.cat-tab.active{color:#06121f;background:var(--gold);border-color:var(--gold)}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(248px,100%),1fr));gap:1.1rem}
+.cat-card{position:relative;display:flex;flex-direction:column;gap:.5rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem 1.3rem 1.45rem;
+  text-decoration:none;color:inherit;transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.cat-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:var(--shadow)}
+.cat-card .cat-ico{width:42px;height:42px;display:grid;place-items:center;border-radius:11px;
+  background:color-mix(in srgb,var(--gold) 16%,transparent);color:var(--gold);margin-bottom:.3rem}
+.cat-card .cat-ico svg{width:22px;height:22px}
+.cat-card h4{font-size:var(--fs-md);color:var(--heading);line-height:1.25}
+.cat-card .cat-tag{font-size:var(--fs-xs);color:var(--text-mute)}
+.cat-card .cat-go{margin-top:.5rem;font-size:var(--fs-sm);font-weight:700;color:var(--gold)}
+.cat-card .cat-pill{position:absolute;top:1rem;right:1rem;font-size:10px;font-weight:700;letter-spacing:.4px;
+  text-transform:uppercase;color:var(--text-mute);border:1px solid var(--border);border-radius:999px;padding:.18rem .5rem}
+.cat-card[hidden]{display:none}
+
+/* ----- Why ALLIN feature grid ------------------------------------------- */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1.2rem}
+.why-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem}
+.why-card .why-ico{width:46px;height:46px;display:grid;place-items:center;border-radius:12px;
+  background:color-mix(in srgb,var(--gold) 16%,transparent);color:var(--gold);margin-bottom:1rem}
+.why-card .why-ico svg{width:24px;height:24px}
+.why-card h3{font-size:var(--fs-lg);color:var(--heading);margin-bottom:.45rem}
+.why-card p{font-size:var(--fs-sm);color:var(--text-soft);line-height:1.6}
+
 /* ----- Skill / program card grid ---------------------------------------- */
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:1.4rem}
 .skill-card{display:grid;grid-template-columns:128px 1fr;background:var(--surface);border:1px solid var(--border-soft);
