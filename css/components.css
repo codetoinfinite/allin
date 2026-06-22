@@ -75,7 +75,8 @@
 /* ----- Footer ------------------------------------------------------------ */
 .footer{background:var(--bg-1);border-top:1px solid var(--border-soft);
   padding:clamp(3rem,6vw,4.5rem) 0 1.8rem}
-.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:2.4rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr .85fr 1fr;gap:1.8rem}
+.footer-col .footer-sub{display:block;font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--gold);margin:.9rem 0 .25rem;opacity:.8}
 .footer-col h4{font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.1em;
   color:var(--text-mute);margin-bottom:1rem;font-family:var(--font-body);font-weight:700}
 .footer-col a{display:block;color:var(--text-soft);padding:.32rem 0;font-size:var(--fs-sm);transition:color .2s,padding-left .2s}
@@ -138,6 +139,10 @@
   .nav-links a{padding:.85rem 1rem;border-radius:12px}
   .nav-links a.active::after{display:none}
   .nav-links a.active{background:var(--surface-2)}
+}
+@media (max-width:980px){
+  .footer-grid{grid-template-columns:repeat(3,1fr);gap:1.8rem}
+  .footer-brand{grid-column:1/-1}
 }
 @media (max-width:768px){
   .footer-grid{grid-template-columns:1fr 1fr;gap:1.8rem}

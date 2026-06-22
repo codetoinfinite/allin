@@ -153,6 +153,10 @@
   padding-top:1rem;border-top:1px solid var(--border-soft)}
 .prog-card .elig{font-size:var(--fs-xs);color:var(--text-mute)}
 .prog-card .elig b{display:block;color:var(--text);font-size:var(--fs-sm)}
+.prog-card .prog-media{margin:-1.6rem -1.6rem 1.2rem;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--bg-1)}
+.prog-card .prog-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.prog-card:hover .prog-media img{transform:scale(1.06)}
+.prog-card .prog-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--surface) 88%,transparent))}
 
 /* ----- Faculty ----------------------------------------------------------- */
 .faculty-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
